@@ -101,7 +101,5 @@ theme: icarus
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
     type: git
-    # repo: https://github.com/yueqianW/yueqianW.github.io.git
     repo: git@github.com:yueqianW/yueqianW.github.io.git
-    #repo: git@e.coding.net:yueqianw/yueqian.coding.me.git
     branch: main
