@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html <%- has_config('language') ? ' lang="' + get_config('language').substring(0, 2) + '"' : '' %>>
+<head>
+    <%- partial('common/head') %>
+</head>
+<body class="is-<%= column_count() %>-column">
+    <%- partial('common/navbar', { page }) %>
+    <% function main_column_class() {
+        switch (column_count()) {
+            case 1:
+                return 'is-12';
+            case 2:
+                return 'is-8-tablet is-8-desktop is-8-widescreen';
+            case 3:
+                return 'is-8-tablet is-8-desktop is-6-widescreen'
+        }
+        return '';
+    } %>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column <%= main_column_class() %> has-order-2 column-main"><%- body %></div>
+                <%- partial('common/widget', { position: 'left' }) %>
+                <%- partial('common/widget', { position: 'right' }) %>
+            </div>
+        </div>
+    </section>
+
+<!--    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>-->
+
+    <!--    增加小地球效果-->
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5nr63fouknx&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+
+    <%- partial('common/footer') %>
+    <%- partial('common/scripts') %>
+
+    <% if (has_config('search.type')) { %>
+    <%- partial('search/' + get_config('search.type')) %>
+    <% } %>
+</body>
+</html>

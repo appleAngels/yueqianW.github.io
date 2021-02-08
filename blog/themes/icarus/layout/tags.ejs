@@ -1,0 +1,19 @@
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label" style="font-size: 1rem">
+                <%= _p('common.tag', Infinity) %>
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                <% _list_tags().forEach(tag => { %>
+                <div class="control">
+                    <a class="tags has-addons" href="<%= tag.url %>">
+                        <span class="tag" style="font-size: 1rem"><%= tag.name %></span>
+                        <span class="tag is-grey" style="font-size: 1rem"><%= tag.count %></span>
+                    </a>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
