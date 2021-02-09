@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2021-02-08T06:14:35.000Z">
-<meta property="article:modified_time" content="2021-02-09T01:57:43.333Z">
+<meta property="article:modified_time" content="2021-02-09T02:18:41.670Z">
 <meta property="article:author" content="yue&#39;qian">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
@@ -188,7 +188,8 @@
 <blockquote>
 <p><a href="https://developer.apple.com/download/more/" target="_blank" rel="noopener">https://developer.apple.com/download/more/</a><br>搜索 Command Line Tools 下载对应 macOS 版本进行安装</p>
 </blockquote>
-<h3 id="2、install-Homebrew-a-package-manager-for-macOS"><a href="#2、install-Homebrew-a-package-manager-for-macOS" class="headerlink" title="2、install Homebrew, a package manager for macOS:"></a>2、install Homebrew, a package manager for macOS:</h3><p><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+<h3 id="2、install-Homebrew-a-package-manager-for-macOS"><a href="#2、install-Homebrew-a-package-manager-for-macOS" class="headerlink" title="2、install Homebrew, a package manager for macOS:"></a>2、install Homebrew, a package manager for macOS:</h3><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span><br></pre></td></tr></tbody></table></figure>
+
 <h3 id="3、install-the-RISC-V-compiler-toolchain"><a href="#3、install-the-RISC-V-compiler-toolchain" class="headerlink" title="3、install the RISC-V compiler toolchain:"></a>3、install the RISC-V compiler toolchain:</h3><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew tap riscv/riscv</span><br><span class="line">$ brew install riscv-tools</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="4、If-you-have-macOS-Catalina-10-15"><a href="#4、If-you-have-macOS-Catalina-10-15" class="headerlink" title="4、If you have macOS Catalina (10.15)"></a>4、If you have macOS Catalina (10.15)</h3><p>riscv-tools will be installed from precompiled binaries. If you do not have Catalina, riscv-tools will be built from source. Note building from source will require approximately 6.5 GB for all of the source and intermediate build files. It builds with the default compiler (clang), but you can specify another compiler on the command line. For example:</p>
