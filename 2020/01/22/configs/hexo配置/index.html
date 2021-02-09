@@ -19,8 +19,9 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-01-22T09:04:37.000Z">
-<meta property="article:modified_time" content="2021-02-08T09:59:37.796Z">
+<meta property="article:modified_time" content="2021-02-09T01:08:59.321Z">
 <meta property="article:author" content="yue&#39;qian">
+<meta property="article:tag" content="configs">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -176,6 +177,7 @@
 <li>添加阅读统计</li>
 </ul>
 <a id="more"></a>
+
 <blockquote>
 <p><a href="https://susreal.com/article/2019/hexo-theme-icarus-2/" target="_blank" rel="noopener">https://susreal.com/article/2019/hexo-theme-icarus-2/</a></p>
 </blockquote>
@@ -206,8 +208,18 @@
 
 <p>3、在每篇文章 article 里面统计阅读量 PV，主页不显示</p>
 <figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/themes/icarus/layout/common/article.ejs</span><br><span class="line"></span><br><span class="line">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"level is-size-7 has-text-grey"</span>&gt;</span><br><span class="line">    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"level-left"</span>&gt;</span><br><span class="line">        &lt;i <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"far fa-eye"</span>&gt;<span class="hljs-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span></span></span><br><span class="line">        &lt;span&gt;&amp;nbsp;<span class="hljs-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span></span><br><span class="line">        &lt;span id=<span class="hljs-string">"busuanzi_container_page_pv"</span> style=<span class="hljs-string">"display: inline;"</span>&gt;</span><br><span class="line">            &lt;span id=<span class="hljs-string">"busuanzi_value_page_pv"</span>&gt;<span class="hljs-number">0</span>&lt;<span class="hljs-regexp">/span&gt;</span></span><br><span class="line"><span class="hljs-regexp">        &lt;/</span>span&gt;</span><br><span class="line">    &lt;<span class="hljs-regexp">/div&gt;</span></span><br><span class="line"><span class="hljs-regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></tbody></table></figure>
+
 <p>需要注意的是：busuanzi 统计 UV 的逻辑是根据浏览器请求的 cookie，不是严格意义上的设备唯一标识。</p>
 </body></html>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/configs/" rel="tag">configs</a>
+                </div>
+            </div>
         </div>
         
         
@@ -556,6 +568,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/configs/">
+                        <span class="tag" style="font-size: 1rem">configs</span>
+                        <span class="tag is-grey" style="font-size: 1rem">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/diary/">
                         <span class="tag" style="font-size: 1rem">diary</span>
                         <span class="tag is-grey" style="font-size: 1rem">1</span>
@@ -572,13 +591,6 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/tips/">
                         <span class="tag" style="font-size: 1rem">tips</span>
-                        <span class="tag is-grey" style="font-size: 1rem">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/tools/">
-                        <span class="tag" style="font-size: 1rem">tools</span>
                         <span class="tag is-grey" style="font-size: 1rem">2</span>
                     </a>
                 </div>
