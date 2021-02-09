@@ -7,20 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>hexo 配置 - yue&#39;qian</title>
+<title>MacOS 制作 linux 启动盘 - yue&#39;qian</title>
 
 
-    <meta name="description" content="文章置顶 添加阅读统计">
+    <meta name="description" content="最近需要学习 MIT 的 Operating System Engineering 课程，需要 ubuntu 的实验环境，正好家里有台旧笔记本，常常因为运行 windows 造成发热自动关机，正常情况下使用 linux 应该还好一些。手上只有 Mac 去做启动盘，虽然简单但是也有一个坑，记录一下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 配置">
-<meta property="og:url" content="http://yoursite.com/2020/01/22/tools/hexo%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="MacOS 制作 linux 启动盘">
+<meta property="og:url" content="http://yoursite.com/2020/03/22/configs/MacOS-%E5%88%B6%E4%BD%9Clinux%E5%90%AF%E5%8A%A8%E7%9B%98/index.html">
 <meta property="og:site_name" content="yue&#39;qian">
-<meta property="og:description" content="文章置顶 添加阅读统计">
+<meta property="og:description" content="最近需要学习 MIT 的 Operating System Engineering 课程，需要 ubuntu 的实验环境，正好家里有台旧笔记本，常常因为运行 windows 造成发热自动关机，正常情况下使用 linux 应该还好一些。手上只有 Mac 去做启动盘，虽然简单但是也有一个坑，记录一下">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="article:published_time" content="2020-01-22T09:04:37.000Z">
-<meta property="article:modified_time" content="2020-07-12T13:48:16.886Z">
+<meta property="article:published_time" content="2020-03-22T14:24:00.000Z">
+<meta property="article:modified_time" content="2021-02-08T09:59:37.785Z">
 <meta property="article:author" content="yue&#39;qian">
+<meta property="article:tag" content="tools">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -97,7 +98,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.png" alt="hexo 配置" height="28">
+                <img src="/images/logo.png" alt="MacOS 制作 linux 启动盘" height="28">
             
             </a>
         </div>
@@ -125,6 +126,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"> 搜索一下吧</i>
@@ -147,13 +152,13 @@
             <div class="level-left">
                 
                 
-                <time class="level-item has-text-grey" datetime="2020-01-22T09:04:37.000Z">2020-01-22</time>
+                <time class="level-item has-text-grey" datetime="2020-03-22T14:24:00.000Z">2020-03-22</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 628 words)
+                    4 minutes read (About 546 words)
                 </span>
                 
                 
@@ -167,47 +172,37 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                hexo 配置
+                MacOS 制作 linux 启动盘
             
         </h1>
         <div class="content">
-            <html><head></head><body><ul>
-<li>文章置顶</li>
-<li>添加阅读统计</li>
-</ul>
+            <html><head></head><body><p>最近需要学习 MIT 的 Operating System Engineering 课程，需要 ubuntu 的实验环境，正好家里有台旧笔记本，常常因为运行 windows 造成发热自动关机，正常情况下使用 linux 应该还好一些。手上只有 Mac 去做启动盘，虽然简单但是也有一个坑，记录一下</p>
 <a id="more"></a>
-<blockquote>
-<p><a href="https://susreal.com/article/2019/hexo-theme-icarus-2/" target="_blank" rel="noopener">https://susreal.com/article/2019/hexo-theme-icarus-2/</a></p>
-</blockquote>
-<h2 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h2><p>博客默认按照创建【时间倒序】排列，如果项置顶一些文章，icarus 没有提供这个功能，需要进行一些改造。</p>
-<p>实现的效果是：写文章的时候在 front-matter 区域  定义文章的权重（top），如果 top 的数值大于 0，则将该文章置顶，并展示置顶标签。</p>
-<p>1、添加 top 属性在根目录的 config 文件中</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/_config.yml</span><br><span class="line"></span><br><span class="line">index_generator:</span><br><span class="line">  path: <span class="hljs-string">''</span></span><br><span class="line">  per_page: <span class="hljs-number">10</span></span><br><span class="line">  order_by:</span><br><span class="line">    top: <span class="hljs-number">-1</span></span><br><span class="line">    date: <span class="hljs-number">-1</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>2、修改 generator.js，主要是在生成 html 代码时优先按照 top 排序</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/⁨node_modules⁩/hexo-generator-index⁩/lib⁩/generator.js</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> paginationDir = config.pagination_dir || <span class="hljs-string">'page'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// added code</span></span><br><span class="line">posts.data = posts.data.sort(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>{</span><br><span class="line"><span class="hljs-keyword">if</span>(a.top &amp;&amp; b.top) {</span><br><span class="line">    <span class="hljs-keyword">if</span>(a.top == b.top) <span class="hljs-keyword">return</span> b.date - a.date;</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> b.top - a.top;</span><br><span class="line">}</span><br><span class="line"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a.top &amp;&amp; !b.top) {</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;</span><br><span class="line">}</span><br><span class="line"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!a.top &amp;&amp; b.top) {</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">}</span><br><span class="line"><span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> b.date - a.date;</span><br><span class="line">});</span><br><span class="line"><span class="hljs-comment">// end</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> path = config.index_generator.path || <span class="hljs-string">''</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>大于 4g 优盘</li>
+<li>linux 系统 iso 镜像 <code>ubuntu-amd64.iso</code></li>
+</ul>
+<h2 id="格式化-usb-硬盘"><a href="#格式化-usb-硬盘" class="headerlink" title="格式化 usb 硬盘"></a>格式化 usb 硬盘</h2><ul>
+<li>打开 Mac 磁盘管理工具，点击优盘，选择抹去</li>
+<li><img src="/../images/tools/mac-iso-tool.png" alt="抹掉硬盘"></li>
+</ul>
+<h2 id="取消磁盘挂载"><a href="#取消磁盘挂载" class="headerlink" title="取消磁盘挂载"></a>取消磁盘挂载</h2><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># 终端执行以下命令</span><br><span class="line"># 列出磁盘，找到你usb硬盘的盘符</span><br><span class="line">diskutil list</span><br><span class="line"></span><br><span class="line"># 输出如下：可以看到usb硬盘为/dev/disk2</span><br><span class="line">/dev/disk0 (internal):</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:      GUID_partition_scheme                         251.0 GB   disk0</span><br><span class="line">   1:                        EFI EFI                     314.6 MB   disk0s1</span><br><span class="line">   2:                 Apple_APFS Container disk1         250.7 GB   disk0s2</span><br><span class="line"></span><br><span class="line">/dev/disk1 (synthesized):</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:      APFS Container Scheme -                      +250.7 GB   disk1</span><br><span class="line">                                 Physical Store disk0s2</span><br><span class="line">   1:                APFS Volume Macintosh HD            125.9 GB   disk1s1</span><br><span class="line">   2:                APFS Volume Preboot                 67.5 MB    disk1s2</span><br><span class="line">   3:                APFS Volume Recovery                1.0 GB     disk1s3</span><br><span class="line">   4:                APFS Volume VM                      6.4 GB     disk1s4</span><br><span class="line"></span><br><span class="line">/dev/disk2 (external, physical):</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:     FDisk_partition_scheme                        *16.0 GB    disk2</span><br><span class="line">   1:                       0xEF                         6.4 MB     disk2s2</span><br><span class="line"></span><br><span class="line"># 取消usb硬盘的挂载</span><br><span class="line">diskutil unmountDisk /dev/disk2</span><br></pre></td></tr></tbody></table></figure>
 
-<p>3、修改模板中的 post.md，添加 top 属性并设置默认值为 0</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/scaffolds/post.md</span><br><span class="line">---</span><br><span class="line">title: {{ title }}</span><br><span class="line">date: {{ date }}</span><br><span class="line">tags:</span><br><span class="line">top: <span class="hljs-number">0</span></span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="导入镜像"><a href="#导入镜像" class="headerlink" title="导入镜像"></a>导入镜像</h2><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 执行如下命令，注意 xxx 为你的系统名称</span><br><span class="line">sudo dd if=~/Users/xxx/Downloads/ubuntu-amd64.iso of=/dev/disk2 bs=2m</span><br><span class="line"></span><br><span class="line"># if是镜像文件路径，of是导入的目的磁盘</span><br><span class="line"># bs是读写快的大小，太小会增大io，降低效率，一般1m～2m即可。</span><br><span class="line"></span><br><span class="line"># 成功会提示</span><br><span class="line">1014+1 records in</span><br><span class="line">1014+1 records out</span><br><span class="line">2126544896 bytes transferred in 814.543111 secs (2610721 bytes/sec)</span><br></pre></td></tr></tbody></table></figure>
 
-<p>4、在目标文章中添加 top: 1</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: yue<span class="hljs-string">'qian | 生活探险家</span></span><br><span class="line"><span class="hljs-string">date: 2018-01-01 00:00:01</span></span><br><span class="line"><span class="hljs-string">tags: life</span></span><br><span class="line"><span class="hljs-string">categories: 人生旅途</span></span><br><span class="line"><span class="hljs-string">top: 1</span></span><br><span class="line"><span class="hljs-string">---</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>5、根据喜好在前端添加标签</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/themes/icarus/layout/common/article.ejs</span><br><span class="line"></span><br><span class="line">&lt;% <span class="hljs-keyword">if</span> (post.top&gt;<span class="hljs-number">0</span>) { %&gt;</span><br><span class="line">&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"fas fa-arrow-alt-circle-up"</span> style=<span class="hljs-string">"color:#3273dc"</span>&gt;<span class="hljs-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span></span></span><br><span class="line">&lt;span <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"level-item"</span> style=<span class="hljs-string">"color:#3273dc"</span>&gt;&amp;nbsp;置顶&lt;<span class="hljs-regexp">/span&gt;</span></span><br><span class="line"><span class="hljs-regexp">&lt;% } %&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="添加阅读统计"><a href="#添加阅读统计" class="headerlink" title="添加阅读统计"></a>添加阅读统计</h2><p>valine 插件在 1.2.0 版本之后提供了文章阅读量统计的功能，好处是可以通过 leancloud 后台的可视化界面看到数据。目前只支持文章 PV 的统计，添加方式非常简单：</p>
-<p>在 config 文件中添加 valine 的 visitor 属性<br>修改 valine 的加载文件 valine.ejs，添加 visitor 字段的加载<br>根据想添加统计的展示位置，例如文章尾部，添加前端代码<br>具体的操作可以参考 valine 官方文档，这里不多介绍了。我用的是更加简单方便的 busuanzi 进行统计：</p>
-<p>1、在 icarus 主题的 head.ejs 中添加脚本</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/themes/icarus/layout/common/head.ejs</span><br><span class="line"></span><br><span class="line">&lt;% <span class="hljs-keyword">if</span> (has_config(<span class="hljs-string">'visit'</span>)) { %&gt;</span><br><span class="line">&lt;script <span class="hljs-keyword">async</span>=<span class="hljs-string">""</span> src=<span class="hljs-string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="hljs-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></span><br><span class="line">&lt;% } %&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<p>2、在网页 footer 里面统计站点的 UV 和 PV</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/themes/icarus/layout/common/footer.ejs</span><br><span class="line"></span><br><span class="line">&lt;span id=<span class="hljs-string">"busuanzi_container_site_uv"</span>&gt;</span><br><span class="line">    ❤️ 感谢</span><br><span class="line">    &lt;span id=<span class="hljs-string">"busuanzi_value_site_uv"</span>&gt;<span class="hljs-number">0</span>&lt;<span class="hljs-regexp">/span&gt;</span></span><br><span class="line"><span class="hljs-regexp">    位小伙伴的</span></span><br><span class="line"><span class="hljs-regexp">&lt;/</span>span&gt;</span><br><span class="line">&lt;span id=<span class="hljs-string">"busuanzi_container_site_pv"</span>&gt;</span><br><span class="line">    &lt;span id=<span class="hljs-string">"busuanzi_value_site_pv"</span>&gt;<span class="hljs-number">0</span>&lt;<span class="hljs-regexp">/span&gt;</span></span><br><span class="line"><span class="hljs-regexp">    次陪伴</span></span><br><span class="line"><span class="hljs-regexp">&lt;/</span>span&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<p>3、在每篇文章 article 里面统计阅读量 PV，主页不显示</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/themes/icarus/layout/common/article.ejs</span><br><span class="line"></span><br><span class="line">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"level is-size-7 has-text-grey"</span>&gt;</span><br><span class="line">    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"level-left"</span>&gt;</span><br><span class="line">        &lt;i <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"far fa-eye"</span>&gt;<span class="hljs-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span></span></span><br><span class="line">        &lt;span&gt;&amp;nbsp;<span class="hljs-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span></span><br><span class="line">        &lt;span id=<span class="hljs-string">"busuanzi_container_page_pv"</span> style=<span class="hljs-string">"display: inline;"</span>&gt;</span><br><span class="line">            &lt;span id=<span class="hljs-string">"busuanzi_value_page_pv"</span>&gt;<span class="hljs-number">0</span>&lt;<span class="hljs-regexp">/span&gt;</span></span><br><span class="line"><span class="hljs-regexp">        &lt;/</span>span&gt;</span><br><span class="line">    &lt;<span class="hljs-regexp">/div&gt;</span></span><br><span class="line"><span class="hljs-regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>需要注意的是：busuanzi 统计 UV 的逻辑是根据浏览器请求的 cookie，不是严格意义上的设备唯一标识。</p>
+<p>同时系统会弹出一个错误的窗口，是因为 Linux 的分区格式是 ext，在 macOS 系统下无法识别才会报错，但是其实一个支持 UEFI 引导的 Ubuntu 启动优盘已经制作成功了，点击 Ignore 忽略或者 Eject 退出 U 盘</p>
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>上面的路径最好是 linux iso 镜像的绝对地址，我放在 Mac 的 Downloads 里<code>sudo dd if=~/Downloads/ubuntu-amd64.iso of=/dev/disk2 bs=2m</code>，虽然有教程说可以直接使用，但是我这边会报错 <code>dd: /Downloads/ubuntu-amd64.iso: No such file or directory</code>，必须在 /Downloads 的前面加上 /Users/xxx 才可行。</p>
 </body></html>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/tools/" rel="tag">tools</a>
+                </div>
+            </div>
         </div>
         
         
@@ -262,16 +257,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/01/27/Travel-life/%E6%88%90%E5%8A%9F%E6%97%A5%E8%AE%B0%EF%BD%9C2020/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/23/6.828/MIT-6-828-Ubuntu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">成功日记｜2020</span>
+                <span class="level-item">MIT 6.828 Ubuntu环境配置</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/30/Travel-life/%E6%88%90%E5%8A%9F%E6%97%A5%E8%AE%B0%EF%BD%9C2019/">
-                <span class="level-item">成功日记｜2019</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/21/6.828/Operating-System-Engineering/">
+                <span class="level-item">Operating System Engineering</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -365,7 +360,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        34
+                        35
                     </p>
                 </div>
             </div>
@@ -427,6 +422,37 @@
 
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label" style="font-size: 1rem">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#准备">
+        <span class="has-mr-6">1</span>
+        <span>准备</span>
+        </a></li><li>
+        <a class="is-flex" href="#格式化-usb-硬盘">
+        <span class="has-mr-6">2</span>
+        <span>格式化 usb 硬盘</span>
+        </a></li><li>
+        <a class="is-flex" href="#取消磁盘挂载">
+        <span class="has-mr-6">3</span>
+        <span>取消磁盘挂载</span>
+        </a></li><li>
+        <a class="is-flex" href="#导入镜像">
+        <span class="has-mr-6">4</span>
+        <span>导入镜像</span>
+        </a></li><li>
+        <a class="is-flex" href="#注意：">
+        <span class="has-mr-6">5</span>
+        <span>注意：</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -731,7 +757,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.png" alt="hexo 配置" height="28">
+                    <img src="/images/logo.png" alt="MacOS 制作 linux 启动盘" height="28">
                 
                 </a>
                 <p class="is-size-7">
