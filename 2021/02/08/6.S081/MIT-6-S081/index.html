@@ -7,19 +7,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>MIT 6.S081 Ubuntu环境配置 - yue&#39;qian</title>
+<title>MIT 6.S081 Mac环境配置 - yue&#39;qian</title>
 
 
-    <meta name="description" content="原本想在自己的 Mac 上安装，找了好几篇教程，都没办法安装上，所以没办法，只能先在 parallel 里装一个 ubuntu，再进行环境配置">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MIT 6.S081 Ubuntu环境配置">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="MIT 6.S081 Mac环境配置">
 <meta property="og:url" content="http://yoursite.com/2021/02/08/6.S081/MIT-6-S081/index.html">
 <meta property="og:site_name" content="yue&#39;qian">
-<meta property="og:description" content="原本想在自己的 Mac 上安装，找了好几篇教程，都没办法安装上，所以没办法，只能先在 parallel 里装一个 ubuntu，再进行环境配置">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2021-02-08T06:14:35.000Z">
-<meta property="article:modified_time" content="2021-02-08T10:00:58.157Z">
+<meta property="article:modified_time" content="2021-02-09T01:57:43.333Z">
 <meta property="article:author" content="yue&#39;qian">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
@@ -97,7 +95,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.png" alt="MIT 6.S081 Ubuntu环境配置" height="28">
+                <img src="/images/logo.png" alt="MIT 6.S081 Mac环境配置" height="28">
             
             </a>
         </div>
@@ -161,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 57 words)
+                    2 minutes read (About 346 words)
                 </span>
                 
                 
@@ -175,14 +173,37 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                MIT 6.S081 Ubuntu环境配置
+                MIT 6.S081 Mac环境配置
             
         </h1>
         <div class="content">
-            <!-- Operating System Engineering --><html><head></head><body><p>原本想在自己的 Mac 上安装，找了好几篇教程，都没办法安装上，所以没办法，只能先在 parallel 里装一个 ubuntu，再进行环境配置</p>
-<a id="more"></a>
+            <!-- Operating System Engineering --><html><head></head><body><a id="more"></a>
 
-<p>TEST</p>
+<h3 id="1、install-developer-tools"><a href="#1、install-developer-tools" class="headerlink" title="1、install developer tools:"></a>1、install developer tools:</h3><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>如果安装过程中报 gcc 错误，需要重装 Command Line Tools</code></p>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /Library/Developer/CommandLineTools</span><br><span class="line">xcode-select --install</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>如果 xcode-select –install 安装失败,因为当前无法从软件更新服务器获得，不能安装该软件</code></p>
+<blockquote>
+<p><a href="https://developer.apple.com/download/more/" target="_blank" rel="noopener">https://developer.apple.com/download/more/</a><br>搜索 Command Line Tools 下载对应 macOS 版本进行安装</p>
+</blockquote>
+<h3 id="2、install-Homebrew-a-package-manager-for-macOS"><a href="#2、install-Homebrew-a-package-manager-for-macOS" class="headerlink" title="2、install Homebrew, a package manager for macOS:"></a>2、install Homebrew, a package manager for macOS:</h3><p><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+<h3 id="3、install-the-RISC-V-compiler-toolchain"><a href="#3、install-the-RISC-V-compiler-toolchain" class="headerlink" title="3、install the RISC-V compiler toolchain:"></a>3、install the RISC-V compiler toolchain:</h3><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew tap riscv/riscv</span><br><span class="line">$ brew install riscv-tools</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="4、If-you-have-macOS-Catalina-10-15"><a href="#4、If-you-have-macOS-Catalina-10-15" class="headerlink" title="4、If you have macOS Catalina (10.15)"></a>4、If you have macOS Catalina (10.15)</h3><p>riscv-tools will be installed from precompiled binaries. If you do not have Catalina, riscv-tools will be built from source. Note building from source will require approximately 6.5 GB for all of the source and intermediate build files. It builds with the default compiler (clang), but you can specify another compiler on the command line. For example:</p>
+<p><code>brew install --cc=gcc-9 riscv-tools</code></p>
+<h3 id="5、The-brew-formula-may-not-link-into-usr-local-You-will-need-to-update-your-shell’s-rc-file-e-g-bashrc-to-add-the-appropriate-directory-to-PATH"><a href="#5、The-brew-formula-may-not-link-into-usr-local-You-will-need-to-update-your-shell’s-rc-file-e-g-bashrc-to-add-the-appropriate-directory-to-PATH" class="headerlink" title="5、The brew formula may not link into /usr/local. You will need to update your shell’s rc file (e.g. ~/.bashrc) to add the appropriate directory to $PATH."></a>5、The brew formula may not link into /usr/local. You will need to update your shell’s rc file (e.g. ~/.bashrc) to add the appropriate directory to $PATH.</h3><p><code>PATH=$PATH:/usr/local/opt/riscv-gnu-toolchain/bin</code></p>
+<h3 id="6-install-QEMU"><a href="#6-install-QEMU" class="headerlink" title="6 install QEMU:"></a>6 install QEMU:</h3><p><code>brew install qemu</code></p>
+<h3 id="7、Testing-your-Installation"><a href="#7、Testing-your-Installation" class="headerlink" title="7、Testing your Installation"></a>7、Testing your Installation</h3><p>To test your installation, you should be able to check the following:</p>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~ riscv64-unknown-elf-gcc --version</span><br><span class="line"></span><br><span class="line">riscv64-unknown-elf-gcc (GCC) 10.2.0</span><br><span class="line">Copyright (C) 2020 Free Software Foundation, Inc.</span><br><span class="line">This is free software; see the source for copying conditions.  There is NO</span><br><span class="line">warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~ qemu-system-riscv64 --version</span><br><span class="line"></span><br><span class="line">QEMU emulator version 5.1.0</span><br><span class="line">Copyright (c) 2003-2020 Fabrice Bellard and the QEMU Project developers</span><br></pre></td></tr></tbody></table></figure>
+
+<p>You should also be able to compile and run xv6:</p>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># in the xv6 directory</span><br><span class="line">$ make qemu</span><br><span class="line"></span><br><span class="line"># ... lots of output ...</span><br><span class="line">init: starting sh</span><br><span class="line">$</span><br></pre></td></tr></tbody></table></figure>
+
+<p>To quit qemu type: Ctrl-a x.</p>
 </body></html>
         </div>
         
@@ -365,7 +386,35 @@
             <h3 class="menu-label" style="font-size: 1rem">
                 Catalogue
             </h3>
-            
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#1、install-developer-tools">
+        <span class="has-mr-6">1</span>
+        <span>1、install developer tools:</span>
+        </a></li><li>
+        <a class="is-flex" href="#2、install-Homebrew-a-package-manager-for-macOS">
+        <span class="has-mr-6">2</span>
+        <span>2、install Homebrew, a package manager for macOS:</span>
+        </a></li><li>
+        <a class="is-flex" href="#3、install-the-RISC-V-compiler-toolchain">
+        <span class="has-mr-6">3</span>
+        <span>3、install the RISC-V compiler toolchain:</span>
+        </a></li><li>
+        <a class="is-flex" href="#4、If-you-have-macOS-Catalina-10-15">
+        <span class="has-mr-6">4</span>
+        <span>4、If you have macOS Catalina (10.15)</span>
+        </a></li><li>
+        <a class="is-flex" href="#5、The-brew-formula-may-not-link-into-usr-local-You-will-need-to-update-your-shell’s-rc-file-e-g-bashrc-to-add-the-appropriate-directory-to-PATH">
+        <span class="has-mr-6">5</span>
+        <span>5、The brew formula may not link into /usr/local. You will need to update your shell’s rc file (e.g. ~/.bashrc) to add the appropriate directory to $PATH.</span>
+        </a></li><li>
+        <a class="is-flex" href="#6-install-QEMU">
+        <span class="has-mr-6">6</span>
+        <span>6 install QEMU:</span>
+        </a></li><li>
+        <a class="is-flex" href="#7、Testing-your-Installation">
+        <span class="has-mr-6">7</span>
+        <span>7、Testing your Installation</span>
+        </a></li></ul>
         </div>
     </div>
 </div>
@@ -556,14 +605,14 @@
             
             <a href="/2021/02/08/6.S081/MIT-6-S081/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="MIT 6.S081 Ubuntu环境配置">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="MIT 6.S081 Mac环境配置">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-02-08T06:14:35.000Z">2021-02-08</time></div>
-                    <a href="/2021/02/08/6.S081/MIT-6-S081/" class="title has-link-black-ter is-size-6 has-text-weight-normal">MIT 6.S081 Ubuntu环境配置</a>
+                    <a href="/2021/02/08/6.S081/MIT-6-S081/" class="title has-link-black-ter is-size-6 has-text-weight-normal">MIT 6.S081 Mac环境配置</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/CS-Course/">CS Course</a> / <a class="has-link-grey -link" href="/categories/CS-Course/MIT-6-S081/">MIT 6.S081</a>
                     </p>
@@ -674,7 +723,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.png" alt="MIT 6.S081 Ubuntu环境配置" height="28">
+                    <img src="/images/logo.png" alt="MIT 6.S081 Mac环境配置" height="28">
                 
                 </a>
                 <p class="is-size-7">
