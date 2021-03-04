@@ -2,14 +2,16 @@
 title: hexo 配置
 top: 0
 date: 2020-01-22 17:04:37
-tags:
+tags: configs
 ---
 
 - 文章置顶
 - 添加阅读统计
 
 <!-- more -->
+
 > https://susreal.com/article/2019/hexo-theme-icarus-2/
+
 ## 文章置顶
 
 博客默认按照创建【时间倒序】排列，如果项置顶一些文章，icarus 没有提供这个功能，需要进行一些改造。
@@ -80,6 +82,7 @@ top: 1
 ```
 
 5、根据喜好在前端添加标签
+
 ```javascript
 /themes/icarus/layout/common/article.ejs
 
@@ -99,6 +102,7 @@ valine 插件在 1.2.0 版本之后提供了文章阅读量统计的功能，好
 具体的操作可以参考 valine 官方文档，这里不多介绍了。我用的是更加简单方便的 busuanzi 进行统计：
 
 1、在 icarus 主题的 head.ejs 中添加脚本
+
 ```javascript
 /themes/icarus/layout/common/head.ejs
 
@@ -108,6 +112,7 @@ valine 插件在 1.2.0 版本之后提供了文章阅读量统计的功能，好
 ```
 
 2、在网页 footer 里面统计站点的 UV 和 PV
+
 ```javascript
 /themes/icarus/layout/common/footer.ejs
 
@@ -123,6 +128,7 @@ valine 插件在 1.2.0 版本之后提供了文章阅读量统计的功能，好
 ```
 
 3、在每篇文章 article 里面统计阅读量 PV，主页不显示
+
 ```javascript
 /themes/icarus/layout/common/article.ejs
 
@@ -136,4 +142,5 @@ valine 插件在 1.2.0 版本之后提供了文章阅读量统计的功能，好
     </div>
 </div>
 ```
+
 需要注意的是：busuanzi 统计 UV 的逻辑是根据浏览器请求的 cookie，不是严格意义上的设备唯一标识。
